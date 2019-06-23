@@ -51,3 +51,6 @@ site-lisp/package/
 .cache/
 /forge-database.sqlite
 /transient
+/workspace
+/eclipse.jdt.ls
+.lsp-session-v1

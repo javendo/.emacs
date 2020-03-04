@@ -5,6 +5,8 @@
 (require-package 'lsp-mode)
 (require-package 'dap-mode)
 (require-package 'lsp-ui)
+;;(require-package 'treemacs)
+;;(require-package 'treemacs-projectile)
 (require-package 'company-lsp)
 
 (setq lsp-enable-snippet nil)

@@ -2,8 +2,6 @@
 ;;; Commentary:
 ;;; Code:
 
-(require-package 'lsp-java)
-
 (setq lsp-java-import-maven-enabled t)
 (setq lsp-java-maven-download-sources t)
 (setq lsp-java-vmargs
@@ -14,6 +12,10 @@
        "-XX:+UseStringDeduplication"
        (concat "-javaagent:" (getenv "HOME") "/.emacs.d/lombok-1.18.4.jar")
        (concat "-Xbootclasspath/a:" (getenv "HOME") "/.emacs.d/lombok-1.18.4.jar")))
+
+(setq lsp-java-format-settings-url (concat "file://" (getenv "HOME") "/.emacs.d/avaya.xml"))
+(setq lsp-java-format-on-type-enabled nil)
+(setq c-basic-offset 2)
 
 (require 'lsp-java)
 (add-hook 'java-mode-hook #'lsp)

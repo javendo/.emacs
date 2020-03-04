@@ -3,11 +3,16 @@
 ;;; Code:
 
 ;; See http://bc.tech.coop/blog/070927.html
+(require-package 'slime)
+
 (add-auto-mode 'lisp-mode "\\.cl\\'")
 (add-hook 'lisp-mode-hook (lambda ()
                             (unless (featurep 'slime)
                               (require 'slime)
                               (normal-mode))))
+
+(setq inferior-lisp-program "sbcl")
+(setq slime-contribs '(slime-fancy))
 
 (after-load 'slime
   (when (executable-find "sbcl")

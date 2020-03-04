@@ -3,15 +3,18 @@
 ;;; Code:
 
 ;;; Basic groovy setup
-;;(require-package 'lsp-groovy)
 
 (when (maybe-require-package 'groovy-mode)
   (after-load 'groovy-mode
-    (add-hook 'groovy-mode-hook (lambda () (setq groovy-indent-offset 2)))
+    (add-hook 'groovy-mode-hook
+              (lambda () (setq groovy-indent-offset 2)))
     (add-auto-mode 'groovy-mode "\\.groovy\\'")))
 
+;;(add-to-list 'load-path (concat (getenv "HOME") "/.emacs.d/lsp-groovy"))
+
 ;;(require 'lsp-groovy)
-;;(add-hook 'groovy-mode-hook #'lsp-groovy-enable)
+
+(require 'groovy-mode)
 
 (provide 'init-groovy)
 ;;; init-groovy.el ends here
